@@ -1,0 +1,521 @@
+html {
+    scroll-behavior: smooth;
+}
+/*علشان لما اعمل سكرول يكون بسلاسة*/
+
+body {
+    /* background-image: url(imege/backround-page.jpg);
+    background-size: cover;
+    background-repeat: no-repeat; */
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f3f4f6, #ffffff);
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background-color: #1a1a1a;
+    padding: 10px 0;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #1e3c72; /* لون خلفية */
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.navbar h1 {
+    color: white;
+    margin:5px ;
+    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+ul li {
+    margin: 0 10px;
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;/* remove underline */
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    color: #f8f9;
+}
+.menu-icon {
+    /* زرار القائمة الجانبية لما يشتغل خاصية الهاتف*/
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 24px;
+    width: 30px;
+    font-size: 24px;
+    color: white;
+}
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background:black;
+        position: absolute;
+        /*🛠️تثبيتالقائمةفوقالعناصر*/top: 25%;
+        /*🛠️تظهرأسفلالنافبارمباشرة*/right: 0;
+        width: 250px;
+        padding: 10px 0;
+        border-radius:5px ;
+        text-align: center;
+        z-index: 1000;
+        /*✅جعلالقائمةفوقكلالعناصر*/
+}
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+        z-index: 1100; /* ✅ أيقونة القائمة فوق كل شيء */
+        position: relative;
+    }
+}
+
+
+
+.menu-icon .bar {
+    /* البارات اللي هتظهر لما يتفعل الزرار */
+    background-color: #fff;
+    height: 4px;
+    width: 100%;
+    margin: 2px 0;
+    transition: 0.3s;
+}
+/*السلة*/
+/* Cart Icon Styles */
+.cart-container {
+    position: relative;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+#cart-icon {
+    width: 30px;
+    height: 30px;
+}
+
+#cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: #e74c3c;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 50%;
+}
+
+
+/* الاستايل بتاع القائمة الجانبية */
+ #products {
+    padding: 20px;/*مستخدمها علشان الكلام وبعضه مش علشان العناصر وبعضها .. علشان ميكونش النص ملصق بالحواف */
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+     justify-content: space-around; 
+}
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    line-height: 1.2;
+}
+
+.product-card {
+    background-color: rgb(233, 227, 227);
+    padding: 13px;
+    border-radius: 8px;
+    text-align: center;/* علشان النص يكون في الوسط */
+}
+
+.product-card img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+.product-card button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    transition: background-color 0.3s;
+}
+
+.product-card button:hover {
+    background-color: #218838;
+}
+
+/* Customer Reviews Section */
+#reviews {
+    background-color: #f8f8f8;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#reviews h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.review-card {
+    background-color: #aa7272;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 15px;
+    width: 280px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.review-card p {
+    font-size: 1rem;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.review-card h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Special Offers Section */
+#offers {
+    background-color: #f7d9d9;
+    padding: 60px 20px;
+    text-align: center;/* علشان النص يكون في الوسط */
+}
+
+#offers h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.offer-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    width: 280px;
+    display: inline-block;
+    vertical-align: top;/* علشان تكون العناصر في الوسط */
+    text-align: left;
+}
+
+.offer-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.offer-card h3 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.offer-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.offer-card button {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background-color 0.3s;
+}
+
+.offer-card button:hover {
+    background-color: #c0392b;
+}
+
+@media (max-width: 768px) {
+    .offer-card {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+#best-sellers {
+    background-color: #f8f8f8;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#best-sellers h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.best-seller-card{
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    width: 280px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+}
+
+.best-seller-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.best-seller-card h3 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.best-seller-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.best-seller-card button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background-color 0.3s;
+}
+
+.best-seller-card button:hover {
+    background-color: #2980b9;
+}
+
+/* About Us Section */
+#about-us {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.about-text {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-text strong {
+    color: #e74c3c;
+}
+
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .about-text, .about-image {
+        flex: none;
+        width: 100%;
+    }
+    
+    .about-image img {
+        max-width: 100%;
+    }
+}
+
+/* Responsive Design Best-sallery */
+@media (max-width: 768px) {
+    .best-seller-card {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+/* 🔹 تنسيق قسم التواصل */
+#contact {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+/* 🔹 تنسيق العنوان */
+#contact h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* 🔹 تنسيق النموذج */
+.contact-form {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔹 تنسيق المدخلات */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* 🔹 تنسيق زر الإرسال */
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* 🔹 تأثير عند تمرير الماوس */
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+/* Footer */
+footer {
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+@media (max-width: 768px) {
+    .review-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #products {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
